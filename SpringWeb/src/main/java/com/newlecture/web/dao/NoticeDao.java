@@ -3,9 +3,6 @@ package com.newlecture.web.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
 
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.entity.NoticeView;
@@ -24,7 +21,7 @@ public interface NoticeDao {
 //			+ "order by regdate desc) nv) "
 //			+ "where rn between 1+(#{page}-1)*10 and #{page}*10")
 	List<NoticeView> getViewList(int page, String field, String query, boolean pub);
-	int getCount(String field, String query);
+	int getCount(String field, String query, boolean pub);
 	NoticeView getView(int id);
 	
 	Notice getNext(int id);
